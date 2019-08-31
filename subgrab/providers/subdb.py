@@ -4,7 +4,7 @@ import hashlib
 import requests
 
 HEADERS = {'User-agent': "SubDB/1.0 (subgrab/1.0; http://github.com/RafayGhafoor/Subscene-Subtitle-Grabber)"}
-LANGUAGES = ('en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro', 'sv', 'tr')
+LANGUAGES = ( 'da', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ro', 'sv', 'tr')
 DOWNLOAD_URL = "http://api.thesubdb.com/?action=download"
 logger = logging.getLogger("subdb.py")
 
@@ -17,7 +17,7 @@ def get_hash(name):
     return hashlib.md5(data).hexdigest()
 
 
-def get_sub(file_hash, filename="filename.mkv", language='en'):
+def get_sub(file_hash, filename="filename.mkv", language='da'):
     logger.info("Downloading subtitles from SubDb")
     logger.debug("Language selected for subtitles: %s" % (language))
     if language.lower() in LANGUAGES:
